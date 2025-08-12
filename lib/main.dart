@@ -10,7 +10,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(255, 71, 71, 71),
+          titleTextStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        scaffoldBackgroundColor: Colors.white,
+      ),
       title: 'Aplikasi Iuran Warga',
       debugShowCheckedModeBanner: false,
       home: LoginPage(),

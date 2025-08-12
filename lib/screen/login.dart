@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                           return ' Email tidak boleh kosong';
                         }
                         final emailRegex =
-                        r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+/.[a-zA-Z]{2,}$';
+                        r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
                         final emailValid = RegExp(emailRegex).hasMatch(value);
                         if (!emailValid) {
                           return 'Format email tidak valid';
@@ -91,6 +91,9 @@ class _LoginPageState extends State<LoginPage> {
                     _gap(),
                     SizedBox(width: double.infinity,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 10, 10, 10),
+                      ),
                       onPressed: (){
                         if (_formkey.currentState?.validate() ?? false) {
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage(),));
@@ -101,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white
+                        color: Colors.white,
                       ),),)),)
                   ],
                 ),
